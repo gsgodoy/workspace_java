@@ -3,16 +3,13 @@ import java.util.Scanner;
 public class Banco {
 	public static void main(String[] args) {
 		Scanner teclado = new Scanner(System.in);
+		ContaBancaria cliente1 = new ContaBancaria(1111,1,"Gustavo Godoy","111.111.111-11");
 		
-		ContaBancaria cliente1 = new ContaBancaria();
+		System.out.println(cliente1.exibirDados());
 		
 		int opcao;
 		double valor;
 		
-		cliente1.setNumeroConta(1111);
-		cliente1.setDigitoVerif(1);
-		cliente1.setCpfTitular("111.111.111-11");
-		cliente1.setNomeTitular("Gustavo Godoy");
 		cliente1.setSaldo(0.00);
 		
 		do {
