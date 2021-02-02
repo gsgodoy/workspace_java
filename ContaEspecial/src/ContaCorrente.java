@@ -1,23 +1,54 @@
 
 public class ContaCorrente {
-	int numConta;
-	String nomeTitular;
-	double saldo;
+	protected int numConta;
+	protected String nomeTitular;
+	protected double saldo;
 	
-	void creditar(double valor) {
-		saldo += valor;
+	public ContaCorrente(int numConta, String nomeTitular, double saldo) {
+		super();
+		this.numConta = numConta;
+		this.nomeTitular = nomeTitular;
+		this.saldo = saldo;
+	}
+
+	public void creditar(double valor) {
+		this.saldo += valor;
 	}
 		
-	boolean debitar(double valor) {
-		if (saldo >= valor) {
-			saldo -= valor;
+	public boolean debitar(double valor) {
+		if (this.saldo >= valor) {
+			this.saldo -= valor;
 			return true;
 		}
 		return false;
 	}
 	
-	String exibirInfo() {
-		return numConta + " - " + nomeTitular + " R$ "+saldo;
+	public String exibirInfo() {
+		return this.numConta + " - " + this.nomeTitular + " R$ "+this.saldo;
+	}
+
+	public int getNumConta() {
+		return numConta;
+	}
+
+	public void setNumConta(int numConta) {
+		this.numConta = numConta;
+	}
+
+	public String getNomeTitular() {
+		return nomeTitular;
+	}
+
+	public void setNomeTitular(String nomeTitular) {
+		this.nomeTitular = nomeTitular;
+	}
+
+	public double getSaldo() {
+		return saldo;
+	}
+
+	public void setSaldo(double saldo) {
+		this.saldo = saldo;
 	}
 	
 	
